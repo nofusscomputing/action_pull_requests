@@ -33,7 +33,7 @@ jobs:
           token: ${{ github.token }}
           skip_merge: true
           skip_revert: true
-          types: "build|chore|ci|docs|feat|fix|perf|refactor|revert|style|test"
+          types: "build|bump|chore|ci|docs|feat|fix|perf|refactor|revert|style|test"
 
 
   pr_dependencies:
