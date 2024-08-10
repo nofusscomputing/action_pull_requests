@@ -40,8 +40,7 @@ jobs:
     runs-on: ubuntu-latest
     name: Dependency Check
     steps:
-    - uses: gregsdennis/dependencies-action@4fc2a4879387b43f784920699cb9303dd0524ac4    # v1.3.3
-    # - uses: gregsdennis/dependencies-action@f4fa19405413bddd2d49fe258f5b571de44cac09     # v1.4.0
+    - uses: gregsdennis/dependencies-action@ae6e0529ef70f1366a21972f40b1ad0e1b5e3218     # v1.4.1
       # with:
       #   custom-domains: my-custom-domain.io another.domain.com
       env:
