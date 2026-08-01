@@ -64,9 +64,13 @@ jobs:
         run: |
           git fetch origin "${{ github.event.pull_request.base.ref }}" --no-tags
 
+          echo "Source: ${{ github.event.pull_request.head.ref }} [${{ github.event.pull_request.head.sha }}]";
+
+          echo "Destination: ${{ github.event.pull_request.base.ref }} [${{ github.event.pull_request.base.sha }}]"
+
           if ! git merge-base --is-ancestor \
-            "origin/${{ github.event.pull_request.base.ref }}" \
-            "${{ github.event.pull_request.head.sha }}"; then
-            echo "::error::PR branch does not contain the latest HEAD of the source branch ${{ github.event.pull_request.base.ref }}."
+            "${{ github.event.pull_request.base.sha }}" \
+            "origin/${{ github.event.pull_request.head.ref }}"; then
+            echo "::error::PR branch does not contain the latest HEAD of the source branch ${{ github.event.pull_request.base.sha }}."
             exit 1
           fi
